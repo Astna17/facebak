@@ -21,7 +21,6 @@ nav {
     flex-direction: column;
     justify-content: space-between;
 
-    /* border-left: 10px var(--c2olor) solid; */
 }
 
 .nav_interaction {
@@ -52,12 +51,12 @@ nav>div> div {
     text-align: center;
     display: flex;
     flex-direction: row;
-    border: 1px var(--c20olor) solid;
+    border-bottom: 1px var(--c20olor) solid;
     width: 70%;
     margin: 0 auto;
     padding: 2%;
     align-items: center;
-    border-radius:0 30px 30px 0;
+    /* border-radius:0 30px 30px 0; */
 }
 
 nav > div > div > div {
@@ -76,3 +75,16 @@ footer {
     color: gray;
     margin-bottom: 2%;
 }
+
+.nav_interaction div  p {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+@media screen  and (max-width :880px){
+    .nav_interaction div  p {
+        display: none;
+    }
+
+}
+

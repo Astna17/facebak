@@ -2,28 +2,35 @@ import "./new-post.css";
 import AddPhotoAlternateRoundedIcon from '@mui/icons-material/AddPhotoAlternateRounded';
 import VideoFileIcon from '@mui/icons-material/VideoFile';
 import TextFieldsIcon from '@mui/icons-material/TextFields';
+import user from "../../teste-files/toonmecom_d28076.jpeg";
+import IosShareIcon from '@mui/icons-material/IosShare';
+import CancelIcon from '@mui/icons-material/Cancel';
+import { PostIteme } from "./post-item";
+const c1olor = 'rgb(7, 237, 206)';
 
-export function NewPost() {
-    const c1olor = 'rgb(7, 237, 206)';
+
+
+export function PostForm() {
 
     const iconStyle = {
         fontSize: 50,
         color: c1olor,
     };
 
-    return (
-        <div className="new-post-container">
-            <div className="Post-left">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Eligendi eius voluptas quam, maiores commodi tempore
-                voluptatibus? Magni facilis ipsa vero ut, q
-            </div>
 
-            <form action="Post">
+    const clode = {
+        fontSize: 25,
+        color: c1olor,
+    };
+
+    return (
+        <form action="Post">
                 <div className="input-desciption-container">
+                    <p>What's up?</p>
                     <textarea name="post-description"
                         placeholder="Set your post's description..."
-                        id="post-description" ></textarea>
+                        id="post-description" >
+                    </textarea>
                 </div>
 
                 <div className="post-required">
@@ -43,13 +50,57 @@ export function NewPost() {
 
                 <div className="post-content-container">
                     <div id="post-content-slide">
-                        You have upload
+                        UPLOADED
+                    </div>
+                    <div className="uplad-content">
+                        <div className="upload-items">
+                            <button id="close"><CancelIcon style={clode} /></button>
+                            <img src={user} alt="upload" />
+                        </div>
+
+                        <div className="upload-items">
+                            <button id="close"><CancelIcon style={clode} /></button>
+                            <img src={user} alt="upload" />
+                        </div>
+
+                        <div className="upload-items">
+                            <button id="close"><CancelIcon style={clode} /></button>
+                            <img src={user} alt="upload" />
+                        </div>
+
+                        <div className="upload-items">
+                            <button id="close"><CancelIcon style={clode} /></button>
+                            <img src={user} alt="upload" />
+                        </div>
+
+                        <div className="upload-items">
+                            <button id="close"><CancelIcon style={clode} /></button>
+                            <img src={user} alt="upload" />
+                        </div>
+
+                        <div className="upload-items">
+                            <button id="close"><CancelIcon style={clode} /></button>
+                            <img src={user} alt="upload" />
+                        </div>
+
+                        <div className="upload-items">
+                            <button id="close"><CancelIcon style={clode} /></button>
+                            <img src={user} alt="upload" />
+                        </div>
                     </div>
                 </div>
                 <div></div>
-                <button className="post-btn" type="submit">POST</button>
+                <button className="post-btn" type="submit"> <IosShareIcon /> POST</button>
             </form>
+    )
+}
 
+
+export function NewPost() {
+    return (
+        <div className="new-post-container">
+            <PostForm/>
+            <PostIteme />
         </div>
     )
 }
