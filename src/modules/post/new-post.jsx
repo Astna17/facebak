@@ -2,13 +2,11 @@ import "./new-post.css";
 import AddPhotoAlternateRoundedIcon from '@mui/icons-material/AddPhotoAlternateRounded';
 import VideoFileIcon from '@mui/icons-material/VideoFile';
 import TextFieldsIcon from '@mui/icons-material/TextFields';
-import user from "../../teste-files/toonmecom_d28076.jpeg";
+import user from "../../teste-files/couverture.jpg";
 import IosShareIcon from '@mui/icons-material/IosShare';
 import CancelIcon from '@mui/icons-material/Cancel';
 import { PostIteme } from "./post-item";
 const c1olor = 'rgb(7, 237, 206)';
-
-
 
 export function PostForm() {
 

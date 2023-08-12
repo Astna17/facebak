@@ -1,4 +1,4 @@
-import userimage from '../teste-files/toonmecom_d28076.jpeg'; 
+import userimage from '../teste-files/couverture.jpg'; 
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import "./header.css";
 export function Header() {

@@ -1,0 +1,12 @@
+:root {
+    --c1olor: black;
+    --c2olor: rgb(7, 237, 206);
+    --c20olor: rgb(0, 115, 255);
+    --fade: azure;
+}
+
+.post-list-container {
+    width: 75vw;
+    height:88vh ;
+    background-color: red;
+}
