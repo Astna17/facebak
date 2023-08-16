@@ -4,7 +4,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import CommentIcon from '@mui/icons-material/Comment';
 import SendIcon from '@mui/icons-material/Send';
 import "./post-item.css";
-import user from "../../teste-files/couverture.jpg";
+import user from "../../assets/teste-files/couverture.jpg";
 
 const c1olor = 'rgb(7, 237, 206)';
 

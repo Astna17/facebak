@@ -1,4 +1,4 @@
-import userimage from '../teste-files/couverture.jpg'; 
+import userimage from '../assets/teste-files/couverture.jpg'; 
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import "./header.css";
 export function Header() {

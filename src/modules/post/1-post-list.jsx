@@ -8,7 +8,6 @@ export function PostList() {
                 <PostIteme />
             </div>
 
-
         </div>
     )
 }

@@ -2,7 +2,7 @@ import "./new-post.css";
 import AddPhotoAlternateRoundedIcon from '@mui/icons-material/AddPhotoAlternateRounded';
 import VideoFileIcon from '@mui/icons-material/VideoFile';
 import TextFieldsIcon from '@mui/icons-material/TextFields';
-import user from "../../teste-files/couverture.jpg";
+import user from "../../assets/teste-files/couverture.jpg";
 import IosShareIcon from '@mui/icons-material/IosShare';
 import CancelIcon from '@mui/icons-material/Cancel';
 import { PostIteme } from "./post-item";
