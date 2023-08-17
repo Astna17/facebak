@@ -15,8 +15,8 @@ export function Home() {
                 <NavBar />
                 <Routes>
                     <Route path="/" element={<Outlet />}>
-                        <Route index element={<NewPost />} />
-                        <Route path="postList" element={<PostList/>} />
+                        <Route index element={<PostList />} />
+                        <Route path="newPost" element={<NewPost/>} />
                         <Route path="profil" element={<Profil/>} />
                     </Route>
                 </Routes>
