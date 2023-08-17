@@ -29,12 +29,11 @@ nav {
         left: 0;
         top: 0;
         z-index: 999;
-        background-color: rgba(255, 255, 255, 0.938);
+        background-color: white;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         transform: translateX(-26vw);
-        
     }
 
     .nav.open {
@@ -75,7 +74,12 @@ nav>div> div {
     margin: 0 auto;
     padding: 2%;
     align-items: center;
+    cursor: pointer;
     /* border-radius:0 30px 30px 0; */
+}
+
+.params_space {
+    cursor: pointer;
 }
 
 nav > div > div > div {
@@ -127,6 +131,7 @@ footer {
         z-index: 999;
         box-shadow: -1px -1px 10px -1px var(--c20olor),  inset -1px -1px 10px -1px rgb(0, 0, 0);;
         transition: .5s;
+        cursor: pointer;
     }
 
     .nav-mobile:hover {

@@ -6,6 +6,7 @@ import AddBoxIcon from '@mui/icons-material/AddBox';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 import { useState } from "react";
+import ev from "../utils/eventHandler";
 
 function Footer() {
     return (
@@ -23,7 +24,6 @@ export function NavBar() {
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
-
     const iconStyle = {
         fontSize: 35,
         color: c1olor,
@@ -37,7 +37,7 @@ export function NavBar() {
         <>
             <nav className={`nav ${isMenuOpen ? 'open' : 'closed'}`}>
                 <div className="nav_interaction">
-                    <div id="home_space" onClick={toggleMenu}>
+                    <div id="home_space" onClick={() => { toggleMenu(); ev.goToPage("/home"); }}>
                         <div>
                             <HomeIcon style={iconStyle} />
                             <div id="home-count">+15</div>
@@ -49,7 +49,6 @@ export function NavBar() {
                             <CommentIcon style={iconStyle} />
                             <div id="message-count">10</div>
                         </div>
-
                         <p>Chat</p>
                     </div>
                     <div id="notif_space" onClick={toggleMenu}>
@@ -59,7 +58,7 @@ export function NavBar() {
                         </div>
                         <p>Notifications</p>
                     </div>
-                    <div id="Post_space" onClick={toggleMenu}>
+                    <div id="Post_space" onClick={() => {toggleMenu(); ev.goToPage("/home/newPost");}} >
                         <div>
                             <AddBoxIcon style={iconStyle} />
                         </div>

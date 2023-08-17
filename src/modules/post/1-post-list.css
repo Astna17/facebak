@@ -54,6 +54,13 @@
         margin-inline: auto;
     }
 
+    .post-list-space {
+        width: 100%;
+    }
+    .post-list-container {
+        width: 100vw;
+    }
+
 }
 
 .post-list-space>div {

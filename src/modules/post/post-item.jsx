@@ -5,7 +5,7 @@ import CommentIcon from '@mui/icons-material/Comment';
 import SendIcon from '@mui/icons-material/Send';
 import "./post-item.css";
 import user from "../../assets/teste-files/couverture.jpg";
-
+import ev from "../../utils/eventHandler.jsx"
 const c1olor = 'rgb(7, 237, 206)';
 
 export function PostIteme() {
@@ -29,7 +29,7 @@ export function PostIteme() {
 
             <div className="head-post-ul">
                 <MoreHorizIcon style={iconStyle2} />
-                <div className="profil-post">
+                <div className="profil-post" onClick={() => ev.goToPage("/home/profil")}>
                     <p>Tiana-Finaritra</p>
                     <div className="img-profil-ul">
                         <img src={user} alt="user" />

@@ -3,7 +3,7 @@
     width: 300px;
     padding: 2%;
     border: 1px solid var(--c20olor);
-    background-color: var(--fade);
+    /* background-color: var(--fade); */
     display: flex;
     flex-direction: column;
     position: relative;
@@ -11,6 +11,7 @@
     height: 70vh;
     margin-top: 2%;
     margin-bottom: 4%;
+    border-bottom: none;
     /* justify-content: space-between; */
 }
 
@@ -58,6 +59,7 @@
     flex-direction: row;
     gap:5px;
     align-items: center;
+    cursor: pointer;
 }
 
 .article-post {
@@ -152,7 +154,7 @@
     /* border: 1px solid black; */
     right: 0;
     align-items: center;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
 }
 
 .reaction {
