@@ -25,6 +25,16 @@
     overflow: scroll;
 }
 
+
+@media screen and (max-width: 500px) {
+    .post-list-space {
+        width: 100%;
+    }
+    .post-list-container {
+        width: 100vw;
+    }
+}
+
 .post-suggest-container {
     border: var(--c1olor) 1px solid;
     width: calc(100% - 700px);
@@ -40,8 +50,7 @@
         display: none
     }
 
-
-    .post-list-space{
+    .post-list-space {
         margin-inline: auto;
     }
 
