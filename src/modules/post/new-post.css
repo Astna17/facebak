@@ -6,7 +6,7 @@
 }
 
 .new-post-container {
-    width: 75vw;
+    width: 85vw;
     height:88vh ;
     /* background-color:var(--fade) ; */
     display: flex;
@@ -14,10 +14,21 @@
     /* margin-top: 2%;
     margin-bottom: 4%; */
     flex-wrap: wrap;
-    /* background-color: red; */
     gap: 2%;
     justify-content: center;
     overflow: scroll;
+}
+
+@media screen and (max-width : 1142px) {
+    .new-post-container {
+        width: 75vw;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .new-post-container {
+        width: 100%;
+    }
 }
 
 

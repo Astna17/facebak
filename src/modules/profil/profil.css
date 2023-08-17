@@ -1,4 +1,10 @@
 .profile-container {
-    width: 75vw;
+    width: 85vw;
     background-color:azure ;
+}
+
+@media screen and (max-width : 1142px) {
+    .profile-container  {
+        width: 75vw;
+    }
 }

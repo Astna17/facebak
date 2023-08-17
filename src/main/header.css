@@ -52,6 +52,7 @@ header {
     justify-content: space-between;
     align-items: center;
     gap: 4vw;
+    /* border: red 1px solid; */
 }
 
 .profil_name_space {
@@ -59,6 +60,12 @@ header {
     gap: 0.3vw;
     align-items: center;
     cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .profil_name_space {
+        display: none;
+    }
 }
 
 .three_bars {
@@ -116,6 +123,17 @@ header {
 
 }
 
+@media screen and (max-width: 600px) {
+    .search-space{
+        width: 35%;
+    }
+}
+
+@media screen  and (max-width: 350px){
+    .search-space{
+        display: none;
+    }
+}
 #search-bar {
     width: 85%;
     height: 100%;
@@ -126,3 +144,4 @@ header {
     
     /* padding-left: 20%; */
 }
+

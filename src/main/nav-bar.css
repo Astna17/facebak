@@ -16,14 +16,21 @@ nav {
     flex-direction: column;
     border-right: var(--c20olor) 1px solid;
     height: 88vh;
-    width: 25vw;
+    width: 15vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
 }
 
-@media screen and (max-width: 500px) {
+
+@media screen and (max-width : 1142px) {
+    nav {
+        width: 25vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
     nav {
         position: absolute;
         left: 0;
@@ -33,7 +40,7 @@ nav {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        transform: translateX(-26vw);
+        transform: translateX(-32vw);
     }
 
     .nav.open {
@@ -75,7 +82,17 @@ nav>div> div {
     padding: 2%;
     align-items: center;
     cursor: pointer;
-    /* border-radius:0 30px 30px 0; */
+    transition: .5s;
+    
+}
+
+.i-am{
+    background-color: var(--c2olor);
+    color:white;
+}
+
+nav>div> div:hover {
+    background-color: var(--c2olor);
 }
 
 .params_space {
@@ -89,7 +106,6 @@ nav > div > div > div {
     gap: 10%;
     font-weight: 600;
     color: var(--alert);
-    width: 50%;
 }
 
 
@@ -102,11 +118,15 @@ footer {
 .nav_interaction div  p {
     font-size: 14px;
     font-weight: 700;
+    padding-left: 3%;
 }
 
-@media screen  and (max-width :880px){
+@media screen  and (max-width :750px){
     .nav_interaction div  p {
         display: none;
+    }
+    nav > div >div >div{
+        margin: 0 auto;
     }
 
 }
@@ -115,7 +135,7 @@ footer {
     display: none;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
     .nav-mobile {
         position: absolute;
         display: flex;
@@ -145,6 +165,31 @@ footer {
     }
 
     .close {
-        transform: translateX(-26vw);
+        transform: translateX(-32vw);
     }
+}
+
+
+.p-r {
+    position: relative;
+    /* border: red 1px solid; */
+}
+
+
+
+nav > div >div >div > div {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    font-size: 10px;
+    color: white;
+    background-color: red;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
 }
