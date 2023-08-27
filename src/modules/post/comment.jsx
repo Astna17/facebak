@@ -1,0 +1,57 @@
+import "./comment.css";
+import InsertEmoticon from '@mui/icons-material/InsertEmoticon';
+import Face from '@mui/icons-material/Face';
+import LocalSee from '@mui/icons-material/LocalSee';
+import Send from '@mui/icons-material/Send';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import user from "../../assets/teste-files/couverture.jpg"
+
+function CommentItem() {
+    return (
+        <>
+            <div className="comment-items-space">
+                <div className="profil-space">
+                    <img src={user} alt="user" />
+                </div>
+                <div className="comment-items">
+                    <p className="user-name">Tiana Finaritra</p>
+                    <p className="comment-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <div className="comment-r">
+                        <p id="love">J'aime</p>
+                        <p id="repondre">Repondre</p>
+                        <p id="create-date">22min</p>
+                    </div>
+                </div>
+                <div id="comment-option">
+                    <MoreHorizIcon />
+                </div>
+            </div>
+        </>
+    )
+}
+
+export function Comment() {
+    return (
+        <>
+            <div className="comment-containeer">
+                <form >
+                    <div className="my-comment-space">
+                        <textarea name="comment" id="commet-area" cols="30" rows="10" placeholder="entrer your comment">
+                            Textarea
+                        </textarea>
+                        <p>ullistration</p>
+                    </div>
+                    <div className="comment-interaction">
+                        <div className="interaction-icon-space">
+                            <Face />
+                            <InsertEmoticon />
+                            <LocalSee />
+                        </div>
+                        <button type="submit"><Send /></button>
+                    </div>
+                </form>
+                <CommentItem />
+                <CommentItem />
+            </div>
+        </>)
+}

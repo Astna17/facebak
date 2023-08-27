@@ -6,6 +6,7 @@ import SendIcon from '@mui/icons-material/Send';
 import "./post-item.css";
 import user from "../../assets/teste-files/couverture.jpg";
 import ev from "../../utils/eventHandler.jsx"
+// import { Comment } from './comment';
 const c1olor = 'rgb(7, 237, 206)';
 
 export function PostIteme() {
@@ -68,6 +69,8 @@ export function PostIteme() {
                 </div>
 
             </div>
+
+            {/* <Comment/> */}
 
         </div>
     )

@@ -12,7 +12,7 @@ export function PostList() {
                 <PostIteme />
             </div>
             <div className="post-suggest-container">
-                <Suggestion/>
+                <Suggestion />
             </div>
         </div>
     )
