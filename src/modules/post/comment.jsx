@@ -6,6 +6,33 @@ import Send from '@mui/icons-material/Send';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import user from "../../assets/teste-files/couverture.jpg"
 
+function CommentField() {
+    return (
+        <>
+            <form  className="comment-form">
+                <div className="profil-space">
+                    <img src={user} alt="user" />
+                </div>
+                <div className="comment-feild-input">
+                    <div className="my-comment-space">
+                        <textarea name="comment" id="commet-area" cols={100}  placeholder="entrer your comment">
+                        </textarea>
+                    </div>
+                    <div className="comment-interaction">
+                        <div className="interaction-icon-space">
+                            <Face />
+                            <InsertEmoticon />
+                            <LocalSee />
+                        </div>
+                        
+                        <button id="send-comment" type="submit"><Send /></button>
+                    </div>
+                </div>
+            </form>
+        </>
+    )
+}
+
 function CommentItem() {
     return (
         <>
@@ -30,28 +57,18 @@ function CommentItem() {
     )
 }
 
+
+
 export function Comment() {
     return (
         <>
-            <div className="comment-containeer">
-                <form >
-                    <div className="my-comment-space">
-                        <textarea name="comment" id="commet-area" cols="30" rows="10" placeholder="entrer your comment">
-                            Textarea
-                        </textarea>
-                        <p>ullistration</p>
-                    </div>
-                    <div className="comment-interaction">
-                        <div className="interaction-icon-space">
-                            <Face />
-                            <InsertEmoticon />
-                            <LocalSee />
-                        </div>
-                        <button type="submit"><Send /></button>
-                    </div>
-                </form>
-                <CommentItem />
-                <CommentItem />
+            <div className="comment-container ">
+                <CommentField />
+                <div className="comment-containeer">
+                    <CommentItem />
+                    <CommentItem />
+                </div>
             </div>
-        </>)
+        </>
+    )
 }

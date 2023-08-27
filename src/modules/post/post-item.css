@@ -12,7 +12,7 @@
     margin-top: 2%;
     margin-bottom: 4%;
     border-bottom: none;
-    /* justify-content: space-between; */
+    border-radius: 20px 0 0 0;
 }
 
 
@@ -152,9 +152,10 @@
     justify-content: space-between;
     width: 80%;
     /* border: 1px solid black; */
-    right: 0;
+    right: -1px;
     align-items: center;
     /* background-color: aliceblue; */
+    border-radius: 10px 0 0 10px;
 }
 
 .reaction {
@@ -175,4 +176,9 @@
     justify-content: center;
     align-items: center;
     gap: 4%;
+}
+
+.Love-absolute {
+    position: absolute;
+    
 }
