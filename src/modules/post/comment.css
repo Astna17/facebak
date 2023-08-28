@@ -17,7 +17,7 @@
     overflow: scroll;
     margin-bottom: -2%;
     border: 1px var(--c20olor) solid;
-    display: none;
+  
 }
 
 
@@ -107,3 +107,8 @@
 .show {
     display: block;
 }
+
+.d-none {
+    display: none;
+}
+

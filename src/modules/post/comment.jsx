@@ -4,18 +4,18 @@ import Face from '@mui/icons-material/Face';
 import LocalSee from '@mui/icons-material/LocalSee';
 import Send from '@mui/icons-material/Send';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import user from "../../assets/teste-files/couverture.jpg"
+import user from "../../assets/teste-files/couverture.jpg";
 
 function CommentField() {
     return (
         <>
-            <form  className="comment-form">
+            <form className="comment-form">
                 <div className="profil-space">
                     <img src={user} alt="user" />
                 </div>
                 <div className="comment-feild-input">
                     <div className="my-comment-space">
-                        <textarea name="comment" id="commet-area" cols={100}  placeholder="entrer your comment">
+                        <textarea name="comment" id="commet-area" cols={100} placeholder="entrer your comment">
                         </textarea>
                     </div>
                     <div className="comment-interaction">
@@ -24,7 +24,7 @@ function CommentField() {
                             <InsertEmoticon />
                             <LocalSee />
                         </div>
-                        
+
                         <button id="send-comment" type="submit"><Send /></button>
                     </div>
                 </div>
@@ -59,10 +59,10 @@ function CommentItem() {
 
 
 
-export function Comment() {
+export function Comment({ isComment }) {
     return (
         <>
-            <div className="comment-container ">
+            <div className={`comment-container ${isComment ? "" : "d-none"}`}>
                 <CommentField />
                 <div className="comment-containeer">
                     <CommentItem />

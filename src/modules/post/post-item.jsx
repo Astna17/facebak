@@ -7,6 +7,8 @@ import "./post-item.css";
 import user from "../../assets/teste-files/couverture.jpg";
 import ev from "../../utils/eventHandler.jsx"
 import { Comment } from './comment';
+import { useState } from 'react';
+// import { Tune } from '@mui/icons-material';
 const c1olor = 'rgb(7, 237, 206)';
 
 // css
@@ -23,7 +25,32 @@ const iconStyle10 = {
     color: c1olor,
 };
 
+
 function ReactionPost() {
+
+    // reaction show:
+    const [isRate, setRate] = useState(false);
+    const showTypeRate = () => {
+        setRate(true);
+    }
+    const hideTypeRate = () => {
+        setRate(false);
+    }
+
+    //comment show
+    const [isComment, setComment] = useState(false);
+    const showComment = () => {
+        setComment(true);
+    };
+    const closeComment = () => {
+        setComment(false)
+    }
+
+    const [isNameR, setNameR] = useState(false);
+    const showNameR = () => {
+        setNameR(!isNameR);
+    }
+
     return (
         <>
             <div className="date-reaction-container">
@@ -32,20 +59,32 @@ function ReactionPost() {
                 </div>
 
                 <div className="interaction">
-                    <div className="reaction">
-                        <FavoriteIcon style={iconStyle10} />
+                    <div
+                        onMouseEnter={() => showNameR()}
+                        onMouseLeave={() => showNameR()}
+                        className="reaction">
+                        <FavoriteIcon onMouseEnter={() => showTypeRate()} style={iconStyle10} />
                         <span id='Love-absolute'>
-                            <p>Love</p>
-                            <p id='love-count'>10200</p>
+                            <p className={`${isNameR ? '' : 'd-none'} `} id='like'>Rate</p>
+                            <p className={`${isNameR ? 'd-none' : ''} `} id='like-count'>10200</p>
+                            <p className={`${isNameR ? 'd-none' : ''} `} id='dislike-count'>- 00</p>
+
+                            <div className={`like-dislike-container ${isRate ? "" : "d-none"} `} >
+                                <p onClick={() => hideTypeRate()}>Like</p>
+                                <p onClick={() => hideTypeRate()}>Dislike</p>
+                            </div>
                         </span>
                     </div>
-                    <div className="reaction">
+                    <div
+                        onClick={() => showComment()}
+                        className="reaction">
                         <CommentIcon style={iconStyle10} />
                         <span>
                             <p>Comment</p>
                             <p id='comment-count'>123</p>
                         </span>
                     </div>
+
                     <div className="reaction">
                         <SendIcon style={iconStyle10} />
                         <span>
@@ -56,6 +95,12 @@ function ReactionPost() {
                 </div>
 
             </div>
+            <Comment isComment={isComment} />
+            <button
+                onClick={() => closeComment()}
+                className={`closeComment ${isComment ? "" : "d-none"}`} >
+                <CancelIcon />
+            </button>
         </>
     )
 }
@@ -102,14 +147,14 @@ function PostTextContent() {
 }
 
 export function PostIteme() {
-
     return (
-        <div className="Post-left">
+        <div
+            className="Post-left">
             <PostItemHead />
             <PostImageContent />
             <PostTextContent />
             <ReactionPost />
-            <Comment />
+            <Comment isComment={false} />
         </div>
     )
 }
