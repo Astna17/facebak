@@ -26,7 +26,7 @@ const iconStyle10 = {
 };
 
 
-function ReactionPost() {
+function ReactionPost({reaction, commentCount}) {
 
     // reaction show:
     const [isRate, setRate] = useState(false);
@@ -66,7 +66,7 @@ function ReactionPost() {
                         <FavoriteIcon onMouseEnter={() => showTypeRate()} style={iconStyle10} />
                         <span id='Love-absolute'>
                             <p className={`${isNameR ? '' : 'd-none'} `} id='like'>Rate</p>
-                            <p className={`${isNameR ? 'd-none' : ''} `} id='like-count'>10200</p>
+                            <p className={`${isNameR ? 'd-none' : ''} `} id='like-count'>{reaction}</p>
                             <p className={`${isNameR ? 'd-none' : ''} `} id='dislike-count'>- 00</p>
 
                             <div className={`like-dislike-container ${isRate ? "" : "d-none"} `} >
@@ -81,7 +81,7 @@ function ReactionPost() {
                         <CommentIcon style={iconStyle10} />
                         <span>
                             <p>Comment</p>
-                            <p id='comment-count'>123</p>
+                            <p id='comment-count'>{commentCount}</p>
                         </span>
                     </div>
 
@@ -89,7 +89,7 @@ function ReactionPost() {
                         <SendIcon style={iconStyle10} />
                         <span>
                             <p>Share</p>
-                            <p id='share-count'>77</p>
+                            <p id='share-count'>1</p>
                         </span>
                     </div>
                 </div>
@@ -105,13 +105,13 @@ function ReactionPost() {
     )
 }
 
-function PostItemHead() {
+function PostItemHead({ username }) {
     return (
         <>
             <div className="head-post-ul">
                 <CancelIcon style={iconStyle2} />
                 <div className="profil-post" onClick={() => ev.goToPage("/home/profil")}>
-                    <p>Tiana-Finaritra</p>
+                    <p>{username}</p>
                     <div className="img-profil-ul">
                         <img src={user} alt="user" />
                     </div>
@@ -122,7 +122,7 @@ function PostItemHead() {
 }
 
 
-function PostImageContent() {
+function PostImageContent({ title, content }) {
     return (
         <>
             <div className="post-cont-ull">
@@ -132,28 +132,27 @@ function PostImageContent() {
     )
 }
 
-function PostTextContent() {
+function PostTextContent({ title, content }) {
     return (
         <>
             <div className="title">
-                <h4>Ca faisait si longtemps</h4>
+                <h4>{title}</h4>
             </div>
             <article className="article-post">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quos nemo quisquam cum
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quos nemo quisquam cum
+                {content}
             </article>
         </>
     )
 }
 
-export function PostIteme() {
+export function PostIteme({ postData }) {
     return (
         <div
             className="Post-left">
-            <PostItemHead />
+            <PostItemHead username={postData.user.username} />
             <PostImageContent />
-            <PostTextContent />
-            <ReactionPost />
+            <PostTextContent  title={postData.title}  content={postData.content} />
+            <ReactionPost reaction={postData._count.reactions} commentCount={postData._count.comments} />
             <Comment isComment={false} />
         </div>
     )
