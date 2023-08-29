@@ -2,6 +2,7 @@ import userimage from '../assets/teste-files/couverture.jpg';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import "./header.css";
 import ev from '../utils/eventHandler.jsx';
+
 export function Header() {
     const c1olor = 'rgb(7, 237, 206)';
 
@@ -26,7 +27,7 @@ export function Header() {
                         </div>
                         <p>Tiana-Finaritra</p>
                     </div>
-                    <div className="three_bars">
+                    <div className="three_bars" onClick={() => ev.goToPage('/')}>
                         <div id="bar1"></div>
                         <div id="bar2"></div>
                         <div id="bar3"></div>

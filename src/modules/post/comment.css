@@ -17,7 +17,7 @@
     overflow: scroll;
     margin-bottom: -2%;
     border: 1px var(--c20olor) solid;
-    display: none;
+  
 }
 
 
@@ -44,6 +44,9 @@
     padding: 2%;
 }
 
+.comment-items {
+    width: 80%;
+}
 
 .comment-feild-input {
     background-color: var(--fade);
@@ -106,4 +109,8 @@
 
 .show {
     display: block;
+}
+
+.d-none {
+    display: none;
 }

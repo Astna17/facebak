@@ -7,6 +7,8 @@ import "./post-item.css";
 import user from "../../assets/teste-files/couverture.jpg";
 import ev from "../../utils/eventHandler.jsx"
 import { Comment } from './comment';
+import { useState } from 'react';
+// import { Tune } from '@mui/icons-material';
 const c1olor = 'rgb(7, 237, 206)';
 
 // css
@@ -23,7 +25,32 @@ const iconStyle10 = {
     color: c1olor,
 };
 
-function ReactionPost() {
+
+function ReactionPost({reaction, commentCount}) {
+
+    // reaction show:
+    const [isRate, setRate] = useState(false);
+    const showTypeRate = () => {
+        setRate(true);
+    }
+    const hideTypeRate = () => {
+        setRate(false);
+    }
+
+    //comment show
+    const [isComment, setComment] = useState(false);
+    const showComment = () => {
+        setComment(true);
+    };
+    const closeComment = () => {
+        setComment(false)
+    }
+
+    const [isNameR, setNameR] = useState(false);
+    const showNameR = () => {
+        setNameR(!isNameR);
+    }
+
     return (
         <>
             <div className="date-reaction-container">
@@ -32,41 +59,59 @@ function ReactionPost() {
                 </div>
 
                 <div className="interaction">
-                    <div className="reaction">
-                        <FavoriteIcon style={iconStyle10} />
+                    <div
+                        onMouseEnter={() => showNameR()}
+                        onMouseLeave={() => showNameR()}
+                        className="reaction">
+                        <FavoriteIcon onMouseEnter={() => showTypeRate()} style={iconStyle10} />
                         <span id='Love-absolute'>
-                            <p>Love</p>
-                            <p id='love-count'>10200</p>
+                            <p className={`${isNameR ? '' : 'd-none'} `} id='like'>Rate</p>
+                            <p className={`${isNameR ? 'd-none' : ''} `} id='like-count'>{reaction}</p>
+                            <p className={`${isNameR ? 'd-none' : ''} `} id='dislike-count'>- 00</p>
+
+                            <div className={`like-dislike-container ${isRate ? "" : "d-none"} `} >
+                                <p onClick={() => hideTypeRate()}>Like</p>
+                                <p onClick={() => hideTypeRate()}>Dislike</p>
+                            </div>
                         </span>
                     </div>
-                    <div className="reaction">
+                    <div
+                        onClick={() => showComment()}
+                        className="reaction">
                         <CommentIcon style={iconStyle10} />
                         <span>
                             <p>Comment</p>
-                            <p id='comment-count'>123</p>
+                            <p id='comment-count'>{commentCount}</p>
                         </span>
                     </div>
+
                     <div className="reaction">
                         <SendIcon style={iconStyle10} />
                         <span>
                             <p>Share</p>
-                            <p id='share-count'>77</p>
+                            <p id='share-count'>1</p>
                         </span>
                     </div>
                 </div>
 
             </div>
+            <Comment isComment={isComment} />
+            <button
+                onClick={() => closeComment()}
+                className={`closeComment ${isComment ? "" : "d-none"}`} >
+                <CancelIcon />
+            </button>
         </>
     )
 }
 
-function PostItemHead() {
+function PostItemHead({ username }) {
     return (
         <>
             <div className="head-post-ul">
                 <CancelIcon style={iconStyle2} />
                 <div className="profil-post" onClick={() => ev.goToPage("/home/profil")}>
-                    <p>Tiana-Finaritra</p>
+                    <p>{username}</p>
                     <div className="img-profil-ul">
                         <img src={user} alt="user" />
                     </div>
@@ -77,7 +122,7 @@ function PostItemHead() {
 }
 
 
-function PostImageContent() {
+function PostImageContent({ title, content }) {
     return (
         <>
             <div className="post-cont-ull">
@@ -87,29 +132,28 @@ function PostImageContent() {
     )
 }
 
-function PostTextContent() {
+function PostTextContent({ title, content }) {
     return (
         <>
             <div className="title">
-                <h4>Ca faisait si longtemps</h4>
+                <h4>{title}</h4>
             </div>
             <article className="article-post">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quos nemo quisquam cum
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quos nemo quisquam cum
+                {content}
             </article>
         </>
     )
 }
 
-export function PostIteme() {
-
+export function PostIteme({ postData }) {
     return (
-        <div className="Post-left">
-            <PostItemHead />
+        <div
+            className="Post-left">
+            <PostItemHead username={postData.user.username} />
             <PostImageContent />
-            <PostTextContent />
-            <ReactionPost />
-            <Comment />
+            <PostTextContent  title={postData.title}  content={postData.content} />
+            <ReactionPost reaction={postData._count.reactions} commentCount={postData._count.comments} />
+            <Comment isComment={false} />
         </div>
     )
 }

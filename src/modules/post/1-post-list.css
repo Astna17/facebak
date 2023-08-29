@@ -93,7 +93,3 @@
     justify-content: space-around;
     border: 1px var(--c20olor) solid;
 }
-
-.reaction span p:nth-child(2) {
-    color: red;
-}
