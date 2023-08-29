@@ -44,6 +44,9 @@
     padding: 2%;
 }
 
+.comment-items {
+    width: 80%;
+}
 
 .comment-feild-input {
     background-color: var(--fade);

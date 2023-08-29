@@ -41,8 +41,8 @@ function CommentItem() {
                     <img src={user} alt="user" />
                 </div>
                 <div className="comment-items">
-                    <p className="user-name">Tiana Finaritra</p>
-                    <p className="comment-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p className="user-name"> user.name </p>
+                    <p className="comment-item">comment </p>
                     <div className="comment-r">
                         <p id="love">J'aime</p>
                         <p id="repondre">Repondre</p>
